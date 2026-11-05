@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Map</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 20px;
+      background-color: #dceeff;
+      color: #302727;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #8b3a3a;
+      text-align: center;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    #map {
+      width: 100%;
+      height: 480px;
+      margin-top: 24px;
+      border: 4px solid white;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin: 32px auto 0;
+    }
+
+    .page-links a {
+      padding: 12px 20px;
+      border-radius: 8px;
+      background-color: #8b3a3a;
+      color: white;
+      text-decoration: none;
+    }
+
+    .page-links a:hover,
+    .page-links a:focus-visible {
+      background-color: #692b2b;
+    }
+
+    @media (max-width: 600px) {
+      #map {
+        height: 380px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Our Map WIPPPP
+    </h1>
+
+    <p class="intro">
+      Click a pin to see a place and memory from our story.
+    </p>
+
+    <div id="map" aria-label="Interactive map of our memories"></div>
+  </main>
+
+  <footer class="page-links">
+    <a href="index.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="gallery.html">Photo Gallery</a>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    const map = L.map("map").setView([34.0522, -118.2437], 10);
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    const memories = [
+      {
+        coordinates: [34.0522, -118.2437],
+        title: "Replace this sample pin",
+        description: "Add the name of your place and a short memory here."
+      }
+
+      // Add more memories by copying this format:
+      // ,{
+      //   coordinates: [LATITUDE, LONGITUDE],
+      //   title: "Place name",
+      //   description: "Write your memory here."
+      // }
+    ];
+
+    memories.forEach(function (memory) {
+      L.marker(memory.coordinates)
+        .addTo(map)
+        .bindPopup(
+          "<strong>" + memory.title + "</strong><br>" + memory.description
+        );
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      background-color: #dceeff;
+      color: #302727;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #8b3a3a;
+      text-align: center;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 3;
+      margin: 0;
+      overflow: hidden;
+      border: 4px solid white;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .gallery-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border: 2px dashed #8b3a3a;
+      color: #8b3a3a;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .page-links a {
+      padding: 12px 20px;
+      border-radius: 8px;
+      background-color: #8b3a3a;
+      color: white;
+      text-decoration: none;
+    }
+
+    .page-links a:hover,
+    .page-links a:focus-visible {
+      background-color: #692b2b;
+    }
+
+    @media (max-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      body {
+        padding: 16px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Photo Gallery</h1>
+
+    <p class="intro">
+      Welcome to our photo gallery! In this space, youll be able to see how weve grown up together throughout the years
+      We have thousands of pictures of each other in our camera rolls so, its hard to choose out of that many. The pictures i added
+      to this space are significant to me, or hold a good amount of sentimental value. Feel free to click on the picture and learn more about our mom
+
+    <section class="gallery" aria-label="Photo gallery">
+      <!-- Photos: check that each path matches your actual folder and filename. -->
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/FullSizeRender.jpeg" alt="Describe the first photo">
+      </figure>
+
+       <figure class="gallery-item">
+        <img class="gallery-image" src="photos/DSC_4059.jpg" alt="Describe the third photo">
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/13131313.jpg" alt="The second photo">
+      </figure>
+
+        <figure class="gallery-item">
+        <img class="gallery-image" src="photos/DSC_4203-2.jpg" alt="The second photo">
+      </figure>
+
+        <figure class="gallery-item">
+        <img class="gallery-image" src="photos/DSC05872.JPG" alt="The second photo">
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/IMG_0242.jpg" alt="The second photo">
+      </figure>
+
+     
+  
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+    </section>
+  </main>
+
+  <footer class="page-links">
+    <a href="index.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="map.html">Map</a>
+  </footer>
+</body>
+</html>

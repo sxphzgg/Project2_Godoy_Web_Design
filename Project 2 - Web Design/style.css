@@ -1,0 +1,121 @@
+:root {
+  --page-background: #dceeff;
+  --background-picture: url("photos/DSC07032.JPG");
+  --background-wash: rgba(220, 238, 255, 0.65);
+  --photo-frame: #8b3a3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--page-background);
+  background-image:
+    linear-gradient(var(--background-wash), var(--background-wash)),
+    var(--background-picture);
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 180px auto;
+  background-position: center, top left;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px auto;
+}
+
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 760px;
+  margin: 24px auto;
+  padding: 12px;
+  border: 2px solid var(--photo-frame);
+}
+
+.card-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid #aaa;
+  object-fit: cover;
+}
+
+.relationship-timer {
+  max-width: 760px;
+  margin: 32px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #f8f0ee;
+  text-align: center;
+}
+
+.timer-units {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.timer-unit {
+  min-width: 85px;
+  padding: 16px 12px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.timer-unit span {
+  display: block;
+  color: #8b3a3a;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.timer-unit small {
+  display: block;
+  margin-top: 4px;
+}
+
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.page-links a {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #8b3a3a;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .photo-row {
+    gap: 8px;
+    padding: 8px;
+  }
+}

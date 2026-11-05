@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The story of Ethan and me, from how we met to the memories we’ve made together.">
+  <title>Our Story</title>
+
+  <style>
+    :root {
+      --page-background: #dceeff;
+      --accent-color: #8b3a3a;
+      --text-color: #302727;
+      --card-background: rgba(255, 255, 255, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 20px;
+      background-color: var(--page-background);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    header,
+    main,
+    footer {
+      width: 100%;
+      max-width: 1000px;
+      margin-inline: auto;
+    }
+
+    h1 {
+      margin: 0 0 40px;
+      color: var(--accent-color);
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .story-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+
+    .story-copy {
+      padding: 24px;
+      border-radius: 16px;
+      background-color: var(--card-background);
+    }
+
+    .story-copy h2 {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+
+    .story-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: 4px solid white;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      object-fit: cover;
+    }
+
+    .story-row--reverse .story-copy {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .story-row--reverse .story-image {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin: 48px auto 0;
+    }
+
+    .page-links a {
+      padding: 12px 22px;
+      border-radius: 999px;
+      background-color: var(--accent-color);
+      color: white;
+      text-decoration: none;
+    }
+
+    .page-links a:hover,
+    .page-links a:focus-visible {
+      background-color: #692b2b;
+    }
+
+    .page-links a:focus-visible {
+      outline: 3px solid var(--text-color);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 24px 16px;
+      }
+
+      h1 {
+        margin-bottom: 28px;
+      }
+
+      .story-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 36px;
+      }
+
+      .story-copy {
+        padding: 20px;
+      }
+
+      .story-row--reverse .story-copy {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .story-row--reverse .story-image {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Our Story</h1>
+  </header>
+
+  <main>
+    <section class="story-row" aria-labelledby="how-we-met">
+      <div class="story-copy">
+        <h2 id="how-we-met">How We Met</h2>
+
+        <p>
+          I met Ethan during my sophomore year of high school, when our classes
+          were on Zoom because of the COVID-19 pandemic. I wanted to lead a club,
+          so I started an anime club on campus. We got to know each other through
+          conversations, and little by little, we grew closer. After plenty of
+          challenges along the way (*cough*), we started dating on December 3, 2021.
+        </p>
+
+        <p>
+          Our first date was a trip to the beach after school let out early.
+          I went behind my parents’ backs, and that day became the start of
+          so many memories.
+        </p>
+      </div>
+
+      <img
+        class="story-image"
+        src="photos/giggachat.png"
+        alt="Ethan and me together"
+        loading="lazy"
+        decoding="async"
+      >
+    </section>
+
+    <section class="story-row story-row--reverse" aria-labelledby="little-things">
+      <div class="story-copy">
+        <h2 id="little-things">The Little Things</h2>
+
+        <p>
+          For almost a year after we started dating, I was only allowed to go
+          on dates with Ethan from 9 a.m. to 2 p.m. I had to be home by 2, or
+          my dad would get furious. Eventually, we tested my dad’s limits, and
+          within two years, we could hang out from 9 a.m. to 7 p.m.
+        </p>
+
+        <p>
+          When Ethan got his first car, he’d pick me up every Saturday right
+          on time—or even 15 minutes early. Somehow, I’d always come out late.
+          We started by going to the park, then began going to the mall and
+          sometimes watching movies. As the years went by, we seemed to become
+          adults all of a sudden. He got his first job as a tutor, and I started
+          a small business.
+        </p>
+
+        <p>
+          Little by little, our dates became more exciting. We could drive
+          farther, see new places, and try new things together. He never fell
+          asleep, slept through his alarm, or canceled on me. :&gt;
+        </p>
+
+        <p>
+          These days, we rot in bed together, and it still feels like home.
+          It feels like so much time has passed, but somehow, it doesn’t.
+        </p>
+      </div>
+
+      <img
+        class="story-image"
+        src="photos/ethan car.jpg"
+        alt="Ethan and me together"
+        loading="lazy"
+        decoding="async"
+      >
+    </section>
+
+    <section class="story-row" aria-labelledby="growing-together">
+      <div class="story-copy">
+        <h2 id="growing-together">Growing Together</h2>
+
+        <p>
+          Ethan has seen me at my best and at my worst. He saw me fail my
+          driver’s permit test seven times, then helped me learn how to drive. 
+          He saw me struggle in math back in highschool, and helped me understand and overcome
+          it. He was there to help me when I quit my first job and felt like a failure
+          for giving up. He was also there when I started a business, and has been there everytime ive changed my point of sale. 
+          He has never given up on me! 
+        </p>
+
+        <p>
+          He was also there to help me move out of my parents’ house and become more
+          independent. Picture to the right is my car stuffed with all my belongings. We also shoved a lot of things in his car.
+          This has probably been one of the biggest things yet in our relationship.
+          
+        </p>
+      </div>
+
+      <img
+        class="story-image"
+        src="photos/car picture.jpg"
+        alt="Ethan and me together"
+        loading="lazy"
+        decoding="async"
+      >
+    </section>
+
+    <section class="story-row story-row--reverse" aria-labelledby="future">
+      <div class="story-copy">
+        <h2 id="future">A Promise for the Future</h2>
+
+        <p>
+          On our last anniversary, Ethan took me to the LA Love Museum. It was
+          so beautiful, and we took lots of pictures together. I cried a lot,
+          and we opened up about our pasts, our friendships, and the people
+          we’ve lost and gained along the way. Afterward, we went to Echo Park,
+          where he gave me a beautiful promise ring. I wear it everywhere and
+          never take it off. To me, the ring was a sign that he wants to get
+          married someday.
+        </p>
+
+        <p>
+          We’re still pretty young, but I feel lucky to have him. He has so
+          many good qualities that I joke I’d have to die and be reincarnated
+          a thousand times to find someone like him again. He feels like my
+          real soulmate.
+        </p>
+
+        <p>
+          We do want to get married, but I don’t want to follow a traditional
+          plan just to please other people. I’d rather travel with him, keep
+          making memories, go window shopping, live a simple life, and be
+          ourselves. A lot of people say true love isn’t real, but after
+          committing to the same person for five years, I believe respect,
+          honesty, and love can take you far. I can’t wait to see what the
+          future has in store for us. 
+        </p>
+      </div>
+
+      <img
+        class="story-image"
+        src="photos/bigforehead.jpg"
+        alt="Ethan and me together"
+        loading="lazy"
+        decoding="async"
+      >
+    </section>
+  </main>
+
+  <footer>
+    <nav class="page-links" aria-label="Other pages">
+      <a href="index.html">Home </a>
+      <a href="gallery.html">Photo Gallery</a>
+      <a href="map.html">Map</a>
+      \
+    </nav>
+  </footer>
+</body>
+</html>

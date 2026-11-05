@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ethan</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #dceeff;
+      color: #302727;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 6%;
+      background-color: white;
+    }
+
+    .site-name {
+      color: #8b3a3a;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .main-nav a {
+      color: #302727;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible,
+    .main-nav a[aria-current="page"] {
+      color: #8b3a3a;
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      width: min(1050px, 92%);
+      margin: 0 auto;
+    }
+
+    .page-title {
+      margin: 38px 0 8px;
+      color: #8b3a3a;
+      text-align: center;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+    }
+
+    .page-subtitle {
+      margin: 0 0 32px;
+      text-align: center;
+    }
+
+    .intro-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 30px;
+      padding: 22px;
+      border-radius: 18px;
+      background-color: white;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .intro-text h2 {
+      margin-top: 0;
+      color: #8b3a3a;
+    }
+
+    .details-section {
+      padding: 44px 0;
+    }
+
+    .details-section h2,
+    .memory-section h2 {
+      margin-bottom: 8px;
+      color: #8b3a3a;
+      text-align: center;
+    }
+
+    .section-intro {
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .detail-card {
+      padding: 22px;
+      border-top: 5px solid #8b3a3a;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-card h3 {
+      margin-top: 0;
+      color: #8b3a3a;
+    }
+
+    .memory-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 44px;
+      padding: 22px;
+      border-radius: 18px;
+      background-color: white;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .memory-section img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .memory-caption h2 {
+      text-align: left;
+    }
+
+    .closing-message {
+      margin: 0 0 48px;
+      padding: 30px 20px;
+      border-radius: 16px;
+      background-color: #fff1a8;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .closing-message h2 {
+      margin-top: 0;
+      color: #8b3a3a;
+    }
+
+    .site-footer {
+      padding: 22px;
+      background-color: #8b3a3a;
+      color: white;
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .site-header {
+        flex-direction: column;
+      }
+
+      .intro-card,
+      .memory-section {
+        grid-template-columns: 1fr;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="site-name" href="index.html">Five Years Together</a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Photo Gallery</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="map.html">Map</a>
+      <a href="about-ethan.html" aria-current="page">About Ethan</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title">Meet Ethan</h1>
+    <p class="page-subtitle">A little page about someone I love.</p>
+
+    <section class="intro-card" aria-label="Introduction to Ethan">
+      <img
+        src="photos/DSC06147.JPG"
+        alt="A photo of Ethan"
+      >
+
+      <div class="intro-text">
+        <h2>About Ethan</h2>
+        <p>
+          Ethan is my favorite person to share life and memories with.
+          I made this page to celebrate who he is and the little things
+          that make him special to me <3
+        </p>
+        <p>
+        </p>
+      </div>
+    </section>
+
+    <section class="details-section" aria-labelledby="details-title">
+      <h2 id="details-title">Ethan in a Few Little Things</h2>
+      <p class="section-intro">
+        Some details that make Ethan uniquely himself.
+      </p>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <h3>Something I Admire</h3>
+          <p>Something i really admire in Ethan is his kindness and selflessness. Ethan will always make a friend wherever he goes, even if he doesnt know you, he'll talk to you as if hes known you before.
+            Ethan is incredibly selfless. He always puts others ahead of him, including myself and his family especially. With time, I realize that ethan lives for those who care for him, as he lives for those who he cares about the most. 
+          </p>
+        </article>
+
+        <article class="detail-card">
+          <h3>Some of His Favorites</h3>
+          <p>Part of Ethans Hobbies includes learning. Incredibly, on his freetime, ill catch him watching videos relating to chemical reactions and things like that on youtube. hes a chemical Engineer btw.
+            We love to listen to music, he will always be listening to music especially when its quiet. Of course, he loves to eat. Recently i learned his fasination for banana bread, this is what i meant by "i learn more everyday"
+            He also goes to the gym atleast three times a week. He also like to collect Vinyls, play video games,and spend time with me of course,<div class=""></div>
+         
+        </p>
+        </article>
+
+        <article class="detail-card">
+          <h3>A Little Thing That Makes Me Smile</h3>
+          <p> One thing that always makes me smile about Ethan is his infectious laugh. It's impossible to be around him and not smile back, even if you're having a rough day.
+            He tells me everyday without fail that he loves me and that I mean everything to him. Of course, he gives me hugs and calls me baby. He LOVES to crack a random dad joke here and there. 
+            We will make fun of each other all the time, but it's all in good fun. 
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="memory-section" aria-labelledby="memory-title">
+      <img
+        src="photos/DSC06620.JPG"
+        alt="A favorite memory of Ethan and me"
+        loading="lazy"
+      >
+
+      <div class="memory-caption">
+        <h2 id="memory-title">One of My Favorite Memories</h2>
+        <p>
+          My favorite moment with you is 100% the first time we went out of state together when we found out The Strokes were playing at Austin City Limits festival along with many artists we both loved!
+          This picture was taken in the middle of the crowd while they were performing, it was simply a unexplainable moment full of emotions for me especially. Overall, we both know this trip was crazy walking lots of miles back to our Hotel, no car only ubers, the heat of the day making it even more challenging!
+          I love that soon after, we were able to see them exactly six months later! 
+        </p>
+      </div>
