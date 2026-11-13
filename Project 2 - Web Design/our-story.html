@@ -20,22 +20,56 @@
 
     body {
       margin: 0;
-      padding: 32px 20px;
+      padding: 0;
       background-color: var(--page-background);
       color: var(--text-color);
       font-family: Arial, sans-serif;
       line-height: 1.7;
     }
 
-    header,
-    main,
-    footer {
-      width: 100%;
-      max-width: 1000px;
-      margin-inline: auto;
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 6%;
+      background-color: white;
     }
 
-    h1 {
+    .site-name {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .main-nav a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible,
+    .main-nav a[aria-current="page"] {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    main {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+      padding: 32px 0;
+    }
+
+    .page-title {
       margin: 0 0 40px;
       color: var(--accent-color);
       text-align: center;
@@ -85,38 +119,20 @@
       grid-row: 1;
     }
 
-    .page-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin: 48px auto 0;
-    }
-
-    .page-links a {
-      padding: 12px 22px;
-      border-radius: 999px;
-      background-color: var(--accent-color);
-      color: white;
-      text-decoration: none;
-    }
-
-    .page-links a:hover,
-    .page-links a:focus-visible {
-      background-color: #692b2b;
-    }
-
-    .page-links a:focus-visible {
-      outline: 3px solid var(--text-color);
-      outline-offset: 3px;
-    }
-
     @media (max-width: 700px) {
-      body {
-        padding: 24px 16px;
+      .site-header {
+        flex-direction: column;
       }
 
-      h1 {
+      .main-nav {
+        justify-content: center;
+      }
+
+      main {
+        padding: 24px 0;
+      }
+
+      .page-title {
         margin-bottom: 28px;
       }
 
@@ -144,11 +160,21 @@
 </head>
 
 <body>
-  <header>
-    <h1>Our Story</h1>
+  <header class="site-header">
+    <a class="site-name" href="index.html">Five Years Together</a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about-ethan.html">About Ethan</a>
+      <a href="our-story.html" aria-current="page">Our Story</a>
+      <a href="gallery.html">Photo Gallery</a>
+      <a href="map.html">Map</a>
+    </nav>
   </header>
 
   <main>
+    <h1 class="page-title">Our Story</h1>
+
     <section class="story-row" aria-labelledby="how-we-met">
       <div class="story-copy">
         <h2 id="how-we-met">How We Met</h2>
@@ -224,25 +250,26 @@
 
         <p>
           Ethan has seen me at my best and at my worst. He saw me fail my
-          driver’s permit test seven times, then helped me learn how to drive. 
-          He saw me struggle in math back in highschool, and helped me understand and overcome
-          it. He was there to help me when I quit my first job and felt like a failure
-          for giving up. He was also there when I started a business, and has been there everytime ive changed my point of sale. 
-          He has never given up on me! 
+          driver’s permit test seven times, then helped me learn how to drive.
+          He saw me struggle in math back in high school and helped me
+          understand it and overcome those challenges. He was there when I
+          quit my first job and felt like a failure for giving up. He was also
+          there when I started a business, and he has supported me every time
+          I’ve changed my point-of-sale system. He has never given up on me!
         </p>
 
         <p>
-          He was also there to help me move out of my parents’ house and become more
-          independent. Picture to the right is my car stuffed with all my belongings. We also shoved a lot of things in his car.
-          This has probably been one of the biggest things yet in our relationship.
-          
+          He was also there to help me move out of my parents’ house and become
+          more independent. The picture to the right shows my car stuffed with
+          all my belongings. We also packed a lot of things into his car. This
+          has probably been one of the biggest milestones in our relationship.
         </p>
       </div>
 
       <img
         class="story-image"
         src="photos/car picture.jpg"
-        alt="Ethan and me together"
+        alt="My car packed with my belongings during my move"
         loading="lazy"
         decoding="async"
       >
@@ -276,7 +303,7 @@
           ourselves. A lot of people say true love isn’t real, but after
           committing to the same person for five years, I believe respect,
           honesty, and love can take you far. I can’t wait to see what the
-          future has in store for us. 
+          future has in store for us.
         </p>
       </div>
 
@@ -289,14 +316,6 @@
       >
     </section>
   </main>
-
-  <footer>
-    <nav class="page-links" aria-label="Other pages">
-      <a href="index.html">Home </a>
-      <a href="gallery.html">Photo Gallery</a>
-      <a href="map.html">Map</a>
-      \
-    </nav>
-  </footer>
 </body>
 </html>
+```

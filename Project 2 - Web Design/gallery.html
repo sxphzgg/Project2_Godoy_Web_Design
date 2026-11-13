@@ -15,18 +15,54 @@
       flex-direction: column;
       min-height: 100vh;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background-color: #dceeff;
       color: #302727;
       font-family: Arial, sans-serif;
       line-height: 1.6;
     }
 
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 6%;
+      background-color: white;
+    }
+
+    .site-name {
+      color: #8b3a3a;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .main-nav a {
+      color: #302727;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible,
+    .main-nav a[aria-current="page"] {
+      color: #8b3a3a;
+      text-decoration: underline;
+    }
+
     main {
-      flex: 1;
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
+      padding: 0 20px 24px;
     }
 
     h1 {
@@ -43,9 +79,13 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
     }
 
     .gallery-item {
+      position: relative;
       aspect-ratio: 4 / 3;
       margin: 0;
       overflow: hidden;
@@ -62,42 +102,46 @@
       object-fit: cover;
     }
 
-    .photo-placeholder {
+    .photo-caption {
+      position: absolute;
+      inset: 0;
       display: flex;
-      width: 100%;
-      height: 100%;
       align-items: center;
       justify-content: center;
-      padding: 12px;
-      border: 2px dashed #8b3a3a;
-      color: #8b3a3a;
-      font-size: 0.85rem;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .page-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-      padding: 24px;
-    }
-
-    .page-links a {
-      padding: 12px 20px;
-      border-radius: 8px;
-      background-color: #8b3a3a;
+      margin: 0;
+      padding: 16px;
+      background-color: rgba(0, 0, 0, 0.62);
       color: white;
-      text-decoration: none;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
     }
 
-    .page-links a:hover,
-    .page-links a:focus-visible {
-      background-color: #692b2b;
+    .gallery-item:hover .photo-caption,
+    .gallery-item:focus-within .photo-caption {
+      opacity: 1;
+    }
+
+    .site-footer {
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    @media (hover: none) {
+      .photo-caption {
+        opacity: 1;
+      }
     }
 
     @media (max-width: 700px) {
+      .site-header {
+        flex-direction: column;
+      }
+
+      .main-nav {
+        justify-content: center;
+      }
+
       .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
@@ -105,76 +149,164 @@
     }
 
     @media (max-width: 380px) {
-      body {
-        padding: 16px 12px;
+      main {
+        padding: 0 12px 24px;
+      }
+
+      .photo-caption {
+        padding: 8px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .photo-caption {
+        transition: none;
       }
     }
   </style>
 </head>
 
 <body>
+  <header class="site-header">
+    <a class="site-name" href="index.html">Five Years Together</a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about-ethan.html">About Ethan</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="gallery.html" aria-current="page">Photo Gallery</a>
+      <a href="map.html">Map</a>
+    </nav>
+  </header>
+
   <main>
     <h1>Photo Gallery</h1>
 
     <p class="intro">
-      Welcome to our photo gallery! In this space, youll be able to see how weve grown up together throughout the years
-      We have thousands of pictures of each other in our camera rolls so, its hard to choose out of that many. The pictures i added
-      to this space are significant to me, or hold a good amount of sentimental value. Feel free to click on the picture and learn more about our mom
+      Welcome to our photo gallery! In this space, you’ll be able to see how
+      we’ve grown up together throughout the years. We have thousands of
+      pictures of each other in our camera rolls, so it’s hard to choose from
+      that many. The pictures I added to this space are significant to me or
+      hold a good amount of sentimental value. Hover over a picture to read
+      about the memory.
+    </p>
 
     <section class="gallery" aria-label="Photo gallery">
-      <!-- Photos: check that each path matches your actual folder and filename. -->
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/FullSizeRender.jpeg" alt="Describe the first photo">
-      </figure>
-
-       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/DSC_4059.jpg" alt="Describe the third photo">
+        <img class="gallery-image" src="photos/FullSizeRender.jpeg" alt="Ethan and me sitting on a staircase">
+        <figcaption class="photo-caption">
+          Ethan and I sit on the staircase and talk about our new relationship.
+        </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/13131313.jpg" alt="The second photo">
-      </figure>
-
-        <figure class="gallery-item">
-        <img class="gallery-image" src="photos/DSC_4203-2.jpg" alt="The second photo">
-      </figure>
-
-        <figure class="gallery-item">
-        <img class="gallery-image" src="photos/DSC05872.JPG" alt="The second photo">
+        <img class="gallery-image" src="photos/DSC_4059.jpg" alt="Ethan and me at the beach">
+        <figcaption class="photo-caption">
+          Our first date was at the beach!
+        </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/IMG_0242.jpg" alt="The second photo">
+        <img class="gallery-image" src="photos/13131313.jpg" alt="Ethan and me at prom">
+        <figcaption class="photo-caption">
+          It was my prom! We brought a tripod and took these pictures ourselves.
+        </figcaption>
       </figure>
 
-     
-  
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/polaroid.jpeg" alt="Ethan celebrating Father's Day at my house">
+        <figcaption class="photo-caption">
+          Ethan’s first Father’s Day at my house.
+        </figcaption>
+      </figure>
 
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/DSC_4203-2.jpg" alt="Ethan and me at my graduation dinner">
+        <figcaption class="photo-caption">
+          My graduation dinner with Ethan and my family.
+        </figcaption>
+      </figure>
 
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/DSC05872.JPG" alt="Ethan and me at a carnival">
+        <figcaption class="photo-caption">
+          The first time Ethan and I went to a carnival together!
+        </figcaption>
+      </figure>
 
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
-      <figure class="gallery-item"><div class="photo-placeholder">ADD PHOTO HERE</div></figure>
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/IMG_0242.jpg" alt="Me and Ethan at my prom">
+        <figcaption class="photo-caption">
+          My prom!
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/wallows.jpeg" alt="Ethan and me at a Wallows concert">
+        <figcaption class="photo-caption">
+          Our first concert together—we went to see Wallows.
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/seq.jpeg" alt="Ethan and me on our first trip together">
+        <figcaption class="photo-caption">
+          We took our first trip together, just the two of us, at 19 and 20.
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/txt.jpeg" alt="Ethan and me on a trip out of state">
+        <figcaption class="photo-caption">
+          Our first time flying to another state—and my first time on a plane!
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/lastsale.jpeg" alt="A sale for my cup business">
+        <figcaption class="photo-caption">
+          The last sale I went to for my cup business. RIP.
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/casino.png" alt="Ethan and me dressed in matching outfits at a casino">
+        <figcaption class="photo-caption">
+          The first time Ethan and I went to the casino—and our outfits matched!
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/sanfran.jpg" alt="Ethan and me in San Francisco">
+        <figcaption class="photo-caption">
+          Our first time in San Francisco—we went to see The Strokes.
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/cute.jpeg" alt="Ethan and me relaxing together at home">
+        <figcaption class="photo-caption">
+          I moved in with Ethan, and we spend lots of time just lying in bed together.
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/ethangrad.jpeg" alt="Ethan at his college graduation">
+        <figcaption class="photo-caption">
+          Ethan’s college graduation!
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img class="gallery-image" src="photos/recentus.jpg" alt="Ethan and me together recently">
+        <figcaption class="photo-caption">
+          Today, Ethan and I are continuing school, working, and building a future together.
+        </figcaption>
+      </figure>
     </section>
   </main>
 
-  <footer class="page-links">
-    <a href="index.html">Home</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="map.html">Map</a>
-  </footer>
+  <footer class="site-footer" aria-hidden="true"></footer>
 </body>
 </html>
