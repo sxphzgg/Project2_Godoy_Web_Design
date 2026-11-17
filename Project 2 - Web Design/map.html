@@ -99,15 +99,6 @@
       line-height: 1.5;
     }
 
-    .leaflet-popup-content img {
-      display: block;
-      width: 100%;
-      max-height: 150px;
-      margin-top: 8px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
     @media (max-width: 700px) {
       .site-header {
         flex-direction: column;
@@ -148,10 +139,14 @@
 
     <p class="intro">
       Each pin marks a trip and a memory Ethan and I made together.
-      Click a pin to see the place, a photo, and a little piece of our story.
+      Click a pin to read about the place and a little piece of our story.
     </p>
 
-    <div id="map" aria-label="Interactive map of places Ethan and I have visited"></div>
+    <div
+      id="map"
+      role="application"
+      aria-label="Interactive map of places Ethan and I have visited"
+    ></div>
   </main>
 
   <script
@@ -160,13 +155,19 @@
     crossorigin=""
   ></script>
 
+  <!-- Adds OpenFreeMap's vector map style to Leaflet -->
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+  >
+  <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.20/leaflet-maplibre-gl.js"></script>
+
   <script>
     const map = L.map("map");
 
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.maplibreGL({
+      style: "https://tiles.openfreemap.org/styles/liberty"
     }).addTo(map);
 
     const memories = [
@@ -183,9 +184,7 @@
       {
         coordinates: [36.4864, -118.5658],
         title: "Sequoia National Park",
-        description: "One of the stops on our big California trip.",
-        image: "photos/seq.jpeg",
-        imageAlt: "Ethan and me visiting Sequoia National Park"
+        description: "One of the stops on our big California trip."
       },
       {
         coordinates: [37.7433, -119.5758],
@@ -195,21 +194,17 @@
       {
         coordinates: [34.0522, -118.2437],
         title: "Home area",
-        description: "We came back home after our California trip. This pin is approximate."
+        description: "We both live in LA!"
       },
       {
         coordinates: [37.7749, -122.4194],
         title: "San Francisco",
-        description: "Our first time in San Francisco was to see The Strokes.",
-        image: "photos/sanfran.jpg",
-        imageAlt: "Ethan and me in San Francisco"
+        description: "Our first time in San Francisco was to see The Strokes."
       },
       {
         coordinates: [30.2669, -97.7728],
         title: "Austin, Texas",
-        description: "We flew out of state to see The Strokes at Austin City Limits.",
-        image: "photos/txt.jpeg",
-        imageAlt: "A memory from our trip to Austin"
+        description: "We flew out of state to see The Strokes at Austin City Limits."
       },
       {
         coordinates: [32.7157, -117.1611],
@@ -249,16 +244,10 @@
     ];
 
     const markers = memories.map(function (memory) {
-      let popupContent = `
+      const popupContent = `
         <strong>${memory.title}</strong><br>
         ${memory.description}
       `;
-
-      if (memory.image) {
-        popupContent += `
-          <img src="${memory.image}" alt="${memory.imageAlt}">
-        `;
-      }
 
       return L.marker(memory.coordinates)
         .addTo(map)

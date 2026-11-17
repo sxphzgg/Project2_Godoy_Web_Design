@@ -95,6 +95,12 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
 
+    .gallery-item > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     .gallery-image {
       display: block;
       width: 100%;
@@ -115,6 +121,7 @@
       text-align: center;
       opacity: 0;
       transition: opacity 0.25s ease;
+      pointer-events: none;
     }
 
     .gallery-item:hover .photo-caption,
@@ -188,118 +195,150 @@
       we’ve grown up together throughout the years. We have thousands of
       pictures of each other in our camera rolls, so it’s hard to choose from
       that many. The pictures I added to this space are significant to me or
-      hold a good amount of sentimental value. Hover over a picture to read
-      about the memory.
+      hold a good amount of sentimental value. Click a picture to view it full
+      size, or hover over it to read about the memory.
     </p>
 
     <section class="gallery" aria-label="Photo gallery">
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/FullSizeRender.jpeg" alt="Ethan and me sitting on a staircase">
+        <a href="photos/FullSizeRender.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/FullSizeRender.jpeg" alt="Ethan and me sitting on a staircase">
+        </a>
         <figcaption class="photo-caption">
           Ethan and I sit on the staircase and talk about our new relationship.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/DSC_4059.jpg" alt="Ethan and me at the beach">
+        <a href="photos/DSC_4059.jpg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/DSC_4059.jpg" alt="Ethan and me at the beach">
+        </a>
         <figcaption class="photo-caption">
           Our first date was at the beach!
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/13131313.jpg" alt="Ethan and me at prom">
+        <a href="photos/13131313.jpg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/13131313.jpg" alt="Ethan and me at prom">
+        </a>
         <figcaption class="photo-caption">
-          It was my prom! We brought a tripod and took these pictures ourselves.
+          This was Ethan's prom! We brought a tripod and took these pictures ourselves.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/polaroid.jpeg" alt="Ethan celebrating Father's Day at my house">
+        <a href="photos/polaroid.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/polaroid.jpeg" alt="Ethan celebrating Father's Day at my house">
+        </a>
         <figcaption class="photo-caption">
           Ethan’s first Father’s Day at my house.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/DSC_4203-2.jpg" alt="Ethan and me at my graduation dinner">
+        <a href="photos/DSC_4203-2.jpg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/DSC_4203-2.jpg" alt="Ethan and me at my graduation dinner">
+        </a>
         <figcaption class="photo-caption">
           My graduation dinner with Ethan and my family.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/DSC05872.JPG" alt="Ethan and me at a carnival">
+        <a href="photos/DSC05872.JPG" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/DSC05872.JPG" alt="Ethan and me at a carnival">
+        </a>
         <figcaption class="photo-caption">
           The first time Ethan and I went to a carnival together!
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/IMG_0242.jpg" alt="Me and Ethan at my prom">
+        <a href="photos/IMG_0242.jpg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/IMG_0242.jpg" alt="Me and Ethan at my prom">
+        </a>
         <figcaption class="photo-caption">
           My prom!
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/wallows.jpeg" alt="Ethan and me at a Wallows concert">
+        <a href="photos/wallows.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/wallows.jpeg" alt="Ethan and me at a Wallows concert">
+        </a>
         <figcaption class="photo-caption">
           Our first concert together—we went to see Wallows.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/seq.jpeg" alt="Ethan and me on our first trip together">
+        <a href="photos/seq.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/seq.jpeg" alt="Ethan and me on our first trip together">
+        </a>
         <figcaption class="photo-caption">
           We took our first trip together, just the two of us, at 19 and 20.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/txt.jpeg" alt="Ethan and me on a trip out of state">
+        <a href="photos/txt.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/txt.jpeg" alt="Ethan and me on a trip out of state">
+        </a>
         <figcaption class="photo-caption">
           Our first time flying to another state—and my first time on a plane!
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/lastsale.jpeg" alt="A sale for my cup business">
+        <a href="photos/lastsale.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/lastsale.jpeg" alt="A sale for my cup business">
+        </a>
         <figcaption class="photo-caption">
           The last sale I went to for my cup business. RIP.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/casino.png" alt="Ethan and me dressed in matching outfits at a casino">
+        <a href="photos/casino.png" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/casino.png" alt="Ethan and me dressed in matching outfits at a casino">
+        </a>
         <figcaption class="photo-caption">
           The first time Ethan and I went to the casino—and our outfits matched!
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/sanfran.jpg" alt="Ethan and me in San Francisco">
+        <a href="photos/sanfran.jpg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/sanfran.jpg" alt="Ethan and me in San Francisco">
+        </a>
         <figcaption class="photo-caption">
           Our first time in San Francisco—we went to see The Strokes.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/cute.jpeg" alt="Ethan and me relaxing together at home">
+        <a href="photos/cute.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/cute.jpeg" alt="Ethan and me relaxing together at home">
+        </a>
         <figcaption class="photo-caption">
           I moved in with Ethan, and we spend lots of time just lying in bed together.
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/ethangrad.jpeg" alt="Ethan at his college graduation">
+        <a href="photos/ethangrad.jpeg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/ethangrad.jpeg" alt="Ethan at his college graduation">
+        </a>
         <figcaption class="photo-caption">
           Ethan’s college graduation!
         </figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img class="gallery-image" src="photos/recentus.jpg" alt="Ethan and me together recently">
+        <a href="photos/recentus.jpg" target="_blank" rel="noopener">
+          <img class="gallery-image" src="photos/recentus.jpg" alt="Ethan and me together recently">
+        </a>
         <figcaption class="photo-caption">
           Today, Ethan and I are continuing school, working, and building a future together.
         </figcaption>
